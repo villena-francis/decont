@@ -1,5 +1,7 @@
 # Decontamination of small-RNA sequencing samples from mouse
 
+[[_TOC_]]
+
 ## Introduction
 
 In this project, you will be "decontaminating" some small-RNA samples from a couple
@@ -10,17 +12,19 @@ In this case the sequence we will be removed are not really contaminants, but ra
 RNA species that are very abundant and that we have no interest in analysing.
 
 To decontaminate a sample, you simply align all your reads to the contaminants list,
-as if it were a genome, and *keep the reads that do not align*. These reads that do
-not align are the decontaminated reads, and you would use them for your downstream analysis.
+as if it were a genome, and *keep the reads that do* **not** *align*. These reads that do
+not align are the decontaminated reads, and you will use them for your downstream analysis.
 
 The same procedure could be used to remove any type of contaminants, just by
 changing the contents of the contaminants database fasta.
 
 The sample names you will be working with are "C57BL_6NJ" and "SPRET_EiJ". You have multiple
 files for each because one sequencing run was not enough, so you had to re-sequence your samples,
-resulting in technical replicates.
+resulting in technical replicates. This means that you will be merging all files for the same sample
+to increase your sequencing depth.
 
-> IMPORTANT: your pipeline should be able to analyse an arbitrary number of samples.
+> IMPORTANT: your pipeline should be able to analyse an arbitrary number of samples located in
+the `data` directory
 
 ## Setting up your environment
 
@@ -32,30 +36,32 @@ on setting up conda and bioconda](http://bioconda.github.io/user/install.html).
 
 ### Git repository
 
-Your working directory will be under git control. You will first copy this repository
-to your GitHub account, and then work on this new copy using it as your remote.
+Your working directory will be under git control. You will first fork (copy) this repository
+to your GitLab account, and then work on this new copy using it as your remote.
 
 #### Forking this repository
 
 You should start by forking this repository. A git **fork** creates a copy
-of the repository *on your own GitHub account*. This copy will become the remote
+of the repository *on your own GitLab account*. This copy will become the remote
 repository where you will eventually save your work.
 
-You can find the fork button on the top right corner of the repository webpage on GitHub.
+You can find the fork button on the top right corner of the repository webpage on GitLab.
 
 Once you fork the project, you will have a copy of the repository on a new URL:
 
-`https://github.com/<your_username>/decont`
+`https://gitlab.com/<your_username>/decont`
 
 #### Adding your instructor as a collaborator
 
 You should now add your instructor as a collaborator in your copy of the repository,
-so that she/he can interact with you during the development.
+so that she/he can interact with you during the development. You can do this by adding
+his username in the "Members" section on vertical menu bar on the left of the project
+page.
 
 #### Getting help
 
-All interactions with your instructor should be carried out instructor by creating issues in the GitHub
-repository (click on the "Issues" tab on the top left of the GitHub repo page),
+All interactions with your instructor should be carried out by creating issues in the GitLab
+repository (click on the "Issues" tab on the left of the GitLab repo page),
 adding a relevant title and description, **and assigning the issue to your instructor**.
 
 You can assign the issue by clicking on the "Assignees" title on the top right.
@@ -64,7 +70,7 @@ You can assign the issue by clicking on the "Assignees" title on the top right.
 
 #### Cloning your fork and starting work
 
-You should now **clone** this new repository to obtain a local copy in your machine.
+You should now **clone** your new repository to obtain a local copy on your machine.
 
 You can then start working on your local copy of the repository.
 
@@ -111,14 +117,14 @@ Once you are done, you should first export a file with your conda environment in
 conda env export > envs/decont.yaml
 ```
 
-You should **add** the new file to the staging area, **commit** it to the local repository,
+You should **add** the environment file to the staging area, **commit** it to the local repository,
 and **push** your changes to the remote repository.
 
 ## Hints
 
 ### The `basename` command
 
-Basename allows you to obtain the last part of a path, and optionally remove a part of it.
+Basename allows you to obtain the last section of a path, and optionally remove a suffix from it.
 > This should prove very useful to extract the sample IDs from paths.
 
 ```shell
@@ -147,7 +153,7 @@ cat file1.tar.gz file2.tar.gz > merged.tar.gz
 
 You can compare a variable and a strings inside an if statement by doing `if [ "$myvar" == "hello" ]`
 
-### Telling `wget` where to download
+### Setting the output directory for `wget`
 
 The `-P` argument allows you to give wget a directory where to store the downloaded files.
 
