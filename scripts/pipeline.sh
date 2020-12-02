@@ -11,7 +11,7 @@ bash scripts/download.sh <contaminants_url> res yes #TODO
 bash scripts/index.sh res/contaminants.fasta res/contaminants_idx
 
 # Merge the samples into a single file
-for sid in $(<list_of_sample_ids) #TODO
+for sid in $(<list_of_sample_ids>) #TODO
 do
     bash scripts/merge_fastqs.sh data out/merged $sid
 done
@@ -25,10 +25,11 @@ do
     # you will need to obtain the sample ID from the filename
     sid=#TODO
     # mkdir -p out/star/$sid
-    # STAR --runThreadN 4 --genomeDir res/contaminants_idx --outReadsUnmapped Fastx --readFilesIn <input_file> --readFilesCommand zcat --outFileNamePrefix <output_directory>
+    # STAR --runThreadN 4 --genomeDir res/contaminants_idx --outReadsUnmapped Fastx --readFilesIn <input_file> --readFilesCommand gzip -c --outFileNamePrefix <output_directory>
 done 
 
 # TODO: create a log file containing information from cutadapt and star logs
 # (this should be a single log file, and information should be *appended* to it on each run)
 # - cutadapt: Reads with adapters and total basepairs
 # - star: Percentages of uniquely mapped reads, reads mapped to multiple loci, and to too many loci
+# tip: use grep to filter the lines you're interested in
