@@ -25,7 +25,7 @@ do
     # you will need to obtain the sample ID from the filename
     sid=#TODO
     # mkdir -p out/star/$sid
-    # STAR --runThreadN 4 --genomeDir res/contaminants_idx --outReadsUnmapped Fastx --readFilesIn <input_file> --readFilesCommand gzip -c --outFileNamePrefix <output_directory>
+    # STAR --runThreadN 4 --genomeDir res/contaminants_idx --outReadsUnmapped Fastx --readFilesIn <input_file> --readFilesCommand gunzip -c --outFileNamePrefix <output_directory>
 done 
 
 # TODO: create a log file containing information from cutadapt and star logs
