@@ -228,5 +228,6 @@ When you are done, your working directory should look something like this:
 
 These are not required for the completion of the practical, but you can complete them for extra points.
 
-- Replace the loop that downloads the samples data files with a wget one-liner.
-- Check if the output already exists before running a command. If it exists, display a message and continue.
+- Replace the loop that downloads the sample data files with a wget one-liner.
+- Check if the output already exists before running a command. If it exists, display a message, skip the operation,
+and continue.
