@@ -51,6 +51,9 @@ Once you fork the project, you will have a copy of the repository on a new URL:
 
 `https://gitlab.com/<your_username>/decont`
 
+> IMPORTANT: be sure to mark your repository as private after forking. You can do this
+> by going to Settings > General > Visibility, project features, permissions
+
 #### Adding your instructor as a collaborator
 
 You should now add your instructor as a collaborator in your copy of the repository,
