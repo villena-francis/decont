@@ -117,7 +117,7 @@ When complete, your pipeline should be able to automatically do the following (l
 Once you are done, you should first export a file with your conda environment information.
 
 ```shell
-conda env export > envs/decont.yaml
+conda env export --from-history > envs/decont.yaml
 ```
 
 You should **add** the environment file to the staging area, **commit** it to the local repository,
