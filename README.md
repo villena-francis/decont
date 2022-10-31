@@ -1,7 +1,5 @@
 # Decontamination of small-RNA sequencing samples from mouse
 
-[[_TOC_]]
-
 ## Introduction
 
 In this project, you will be "decontaminating" some small-RNA samples from a couple
@@ -32,40 +30,35 @@ the `data` directory
 
 You should create a new, empty conda repository. Make sure you have set up 
 Bioconda to be able to install the necessary packages. [See this link for details
-on setting up conda and bioconda](http://bioconda.github.io/user/install.html).
+on setting up conda and bioconda](http://bioconda.github.io/).
 
 ### Git repository
 
 Your working directory will be under git control. You will first fork (copy) this repository
-to your GitLab account, and then work on this new copy using it as your remote.
+to your GitHub account, and then work on this new copy using it as your remote.
 
 #### Forking this repository
 
 You should start by forking this repository. A git **fork** creates a copy
-of the repository *on your own GitLab account*. This copy will become the remote
+of the repository *on your own GitHub account*. This copy will become the remote
 repository where you will eventually save your work.
 
-You can find the fork button on the top right corner of the repository webpage on GitLab.
+You can find the fork button on the top right of the repository webpage on GitHub.
 
 Once you fork the project, you will have a copy of the repository on a new URL:
 
-`https://gitlab.com/<your_username>/decont`
-
-> IMPORTANT: be sure to mark your repository as private after forking. You can do this
-> by going to Settings > General > Visibility, project features, permissions
+`https://github.com/<your_username>/decont`
 
 #### Adding your instructor as a collaborator
 
 You should now add your instructor as a collaborator in your copy of the repository,
-so that she/he can interact with you during the development. You can do this by adding
-his username in the "Members" section on vertical menu bar on the left of the project
-page.
+so that she/he can interact with you during the development. You can do this by going
+to "Settings > Collaborators and teams > Add people" and adding your instructor's username.
 
 #### Getting help
 
-All interactions with your instructor should be carried out by creating issues in the GitLab
-repository (click on the "Issues" tab on the left of the GitLab repo page),
-adding a relevant title and description, **and assigning the issue to your instructor**.
+You can now ask for help from your instructor by creating a new issue in the GitHub
+repository adding a relevant title and description, **and assigning the issue to your instructor**.
 
 You can assign the issue by clicking on the "Assignees" title on the top right.
 
