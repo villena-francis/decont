@@ -227,3 +227,5 @@ These are not required for the completion of the practical, but you can complete
 - Replace the loop that downloads the sample data files with a wget one-liner.
 - Check if the output already exists before running a command. If it exists, display a message, skip the operation,
 and continue.
+- Add md5 checks to the downloaded files (you can find the md5 hashes in the same URLs by
+  adding the ".md5" extension). Full points for not downloading the md5 files.
