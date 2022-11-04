@@ -28,7 +28,7 @@ the `data` directory
 
 ### Conda
 
-You should create a new, empty conda repository. Make sure you have set up 
+You should create a new, empty conda environment. Make sure you have set up 
 Bioconda to be able to install the necessary packages. [See this link for details
 on setting up conda and bioconda](http://bioconda.github.io/).
 
