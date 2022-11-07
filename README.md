@@ -237,3 +237,7 @@ These are not required for the completion of the practical, but you can complete
 and continue.
 - Add md5 checks to the downloaded files (you can find the md5 hashes in the same URLs by
   adding the ".md5" extension). Full points for not downloading the md5 files.
+- Add a "cleanup.sh" script that removes created files. It should take zero or
+  more of the following arguments: "data", "resources", "output", "logs". If no
+  arguments are passed then it should remove everything.
+
