@@ -93,6 +93,9 @@ When complete, your pipeline should be able to automatically do the following (l
     - The list of urls is available in `data/urls`
 - Download the contaminants database
     - `https://bioinformatics.cnio.es/data/courses/decont/contaminants.fasta.gz`
+- Remove all sequences corresponding to small nuclear RNAs from the contaminants
+  list before using it
+    - Make sure you don't mix "small nuclear" and "small nucleolar"
 - Merge the fastqs from the same sample into a single file
 - Remove the adapters from the data (cutadapt in conda)
 - Index the contaminants database (star in conda, as if it were a genome)
@@ -158,6 +161,11 @@ The `-P` argument allows you to give wget a directory where to store the downloa
 You can use the `-p` argument of `mkdir` to create a directory if
 it doesn't exist, and do nothing if it does. This is useful so that there
 are no errors when running a script many times.
+
+### Filtering sequence files
+
+You can choose to write your own code to do the filtering, or use something like
+the `seqkit` package available in bioconda.
 
 ### Final state of your working directory
 
