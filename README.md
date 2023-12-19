@@ -108,6 +108,20 @@ When complete, your pipeline should be able to automatically do the following (l
 > The scripts contain comments to guide you in the tasks you need to perform.
 > Look for the *#TODO* comments, which indicate parts that need to be modified.
 
+## Adding commits to the repository
+
+You are encouraged to make atomic commits to the repository. This means that
+each commit should make only one logical change to your code. This could be
+fixing a single bug, adding a single feature, rearranging a section of code,
+and so on.
+
+If you're unsure, it's better to commit more frequently rather than less.
+Too many commits can always be squashed together later if necessary, but
+it is much more difficult to separate changes if they've been bundled into
+a single commit.
+
+If you'd like to read more about atomic commits see [here](https://www.aleksandrhovhannisyan.com/blog/atomic-git-commits/).
+
 ## Once you are done
 
 Once you are done, you should first export a file with your conda environment information.
