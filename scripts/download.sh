@@ -6,6 +6,12 @@ wget -nc -P $2 $1
 # and *optionally*:
 # - uncompress the downloaded file with gunzip if the third
 #   argument ($3) contains the word "yes"
+
+if [ "$3" == "yes" ]
+then 
+    gunzip -fk "$2/$(basename $1)"
+fi 
+
 # - filter the sequences based on a word contained in their header lines:
 #   sequences containing the specified word in their header should be **excluded**
 #
