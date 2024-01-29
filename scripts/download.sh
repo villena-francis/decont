@@ -25,3 +25,8 @@ fi
 #   CCAGGATTTACAGACTTTAAA
 #
 #   If $4 == "another" only the **first two sequence** should be output
+
+if [ "$4" == "small nuclear" ]
+then
+    seqkit grep -n -p "$4" -v -r "$2/contaminants.fasta" > "$2/contaminants_filtered.fasta"
+fi 
