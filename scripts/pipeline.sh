@@ -19,8 +19,15 @@ do
 done
 
 # TODO: run cutadapt for all merged files
-# cutadapt -m 18 -a TGGAATTCTCGGGTGCCAAGG --discard-untrimmed \
-#     -o <trimmed_file> <input_file> > <log_file>
+
+mkdir -p out/trimmed
+mkdir -p log/cutadapt
+
+for sid in $(ls out/merged/*fastq.gz | cut -d "-" -f1 | sed 's:data/::')
+do 
+cutadapt -m 18 -a TGGAATTCTCGGGTGCCAAGG --discard-untrimmed \
+         -o out/trimmed/${sid}.trimmed.fastq.gz out/merged/${sid}.fastq.gz > log/cutadapt/${sid}.log
+done
 
 # TODO: run STAR for all trimmed files
 for fname in out/trimmed/*.fastq.gz
