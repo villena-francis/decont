@@ -28,5 +28,5 @@ fi
 
 if [ "$4" == "small nuclear" ]
 then
-    seqkit grep -n -p "$4" -v -r "$2/contaminants.fasta" > "$2/contaminants_filtered.fasta"
-fi 
+    seqkit grep -n -p "$4|$5" -v -r "$2/contaminants.fasta" > "$2/contaminants_filtered.fasta"
+fi
