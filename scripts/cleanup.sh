@@ -1,5 +1,5 @@
 #Add a "cleanup.sh" script that removes created files
-#It should take zero or more of the following arguments: "data", "resources", "output", "logs". 
+#It should take zero or more of the following arguments: "data", "res", "out", "log". 
 #If no arguments are passed then it should remove everything.
 
 dirs=(data res out log)
@@ -14,17 +14,15 @@ then
 else
     for dir in $@
     do
-        if [[ " ${dirs[@]} " =~ " $dir " ]]
+        if [[ " ${dirs[@]} " =~ "$dir" ]]
         then
             if [ -d "$dir" ]
             then
                 find "$dir" -mindepth 1 -delete
-                echo "$dir was emptied"
-            else
-                echo "$dir does not exist" 
+                echo "$dir was emptied" 
             fi
         else
-            echo "Invalid argument: %s\n" "$dir"
+            echo "$dir does not exist"
         fi
     done
 fi
