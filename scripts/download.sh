@@ -3,6 +3,17 @@
 
 wget -nc -P $2 $1
 
+#Add md5 checks to the downloaded files
+remote_md5=$(curl -s $1.md5 | awk '{print $1}')
+hash_check=$(md5sum $2/$(basename $1) | awk '{print $1}')
+
+if [ "$remote_md5" == "$hash_check" ]
+then
+	echo -e "\033[0;32msuccessful md5 check for $2/$(basename $1)\033[0m"
+else
+	echo -e "\033[0;31mfailed md5 check for $2/$(basename $1)\033[0m"
+fi
+
 # and *optionally*:
 # - uncompress the downloaded file with gunzip if the third
 #   argument ($3) contains the word "yes"
