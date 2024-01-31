@@ -9,9 +9,9 @@ hash_check=$(md5sum $2/$(basename $1) | awk '{print $1}')
 
 if [ "$remote_md5" == "$hash_check" ]
 then
-	echo -e "\033[0;32msuccessful md5 check for $2/$(basename $1)\033[0m"
+	echo -e "\033[0;32msuccessful md5 check for $2/$(basename $1)\n\033[0m"
 else
-	echo -e "\033[0;31mfailed md5 check for $2/$(basename $1)\033[0m"
+	echo -e "\033[0;31mfailed md5 check for $2/$(basename $1)\n\033[0m"
 fi
 
 # and *optionally*:
@@ -39,5 +39,7 @@ fi
 
 if [ "$4" == "small nuclear" ]
 then
+    echo -e "\e[34mFiltering sequences excluding by $4 and $5...\e[0m"
     seqkit grep -n -p "$4|$5" -v -r "$2/contaminants.fasta" > "$2/contaminants_filtered.fasta"
+    echo -e "\e[34mDone\n\e[0m"
 fi
