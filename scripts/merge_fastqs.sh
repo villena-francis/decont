@@ -4,6 +4,10 @@
 #
 # The directory containing the samples is indicated by the first argument ($1).
 
+dir=$1
+outdir=$2
+sid=$3
+
 mkdir -p out/merged
 
 cat $1/$3* > $2/$3.fastq.gz

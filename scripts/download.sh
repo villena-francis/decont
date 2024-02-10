@@ -2,6 +2,10 @@
 # place it in the directory specified in the second argument ($2),
 
 fname=$1
+dir=$2
+unzip=$3
+filter1=$4
+filter2=$5
 
 wget -nc -P $2 $1
 
