@@ -1,6 +1,8 @@
 # This script should download the file specified in the first argument ($1),
 # place it in the directory specified in the second argument ($2),
 
+fname=$1
+
 wget -nc -P $2 $1
 
 #Add md5 checks to the downloaded files
@@ -37,7 +39,7 @@ fi
 #
 #   If $4 == "another" only the **first two sequence** should be output
 
-if [ "$4" == "small nuclear" ]
+if [ -n "$4" ]
 then
     echo -e "\e[34mFiltering sequences excluding by $4 and $5...\e[0m"
     seqkit grep -n -p "$4|$5" -v -r "$2/contaminants.fasta" > "$2/contaminants_filtered.fasta"
